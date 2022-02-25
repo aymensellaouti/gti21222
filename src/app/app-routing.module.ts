@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {CvComponent} from "./cv/cv/cv.component";
 import {TodoComponent} from "./todo/todo/todo.component";
 import {MiniWordComponent} from "./directives/mini-word/mini-word.component";
@@ -18,22 +18,26 @@ const routes: Routes = [
   {path: '', component: FirstComponent},
   {path: 'login', component: LoginComponent},
   {path: '', component: FrontComponent, children: [
-      {path: 'cv', children: [
-          {path: '', component: CvComponent},
-          {path: 'add', component: AddPersonneComponent, canActivate: [AuthGuard]},
-          {path: ':id', component: DetailCvComponent},
-      ]},
       {path: 'word', component: MiniWordComponent},
       {path: 'color/:favoriteColor', component: ColorComponent},
   ]},
   {path: 'back', component: BackComponent, children: [
     {path: 'todo', component: TodoComponent},
   ]},
+  {
+    path:"cv",
+    loadChildren:()=>import('./cv/cv.module').then(
+      m=>m.CvModule
+    ),
+  },
+
   {path: '**', component: NF404Component}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

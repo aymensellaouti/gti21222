@@ -16,28 +16,18 @@ import { TwoComponent } from './components/two/two.component';
 import { CardComponent } from './components/card/card.component';
 import { PereComponent } from './components/pere/pere.component';
 import { FilsComponent } from './components/fils/fils.component';
-import { CvComponent } from './cv/cv/cv.component';
-import { ItemComponent } from './cv/item/item.component';
-import { ListComponent } from './cv/list/list.component';
-import { DetailComponent } from './cv/detail/detail.component';
 import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { AmpouleComponent } from './directives/ampoule/ampoule.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { Btc2UsdPipe } from './pipes/btc2-usd.pipe';
-import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
-import {Logger} from "./services/logger";
-import {SayHelloService} from "./services/say-hello.service";
 import { TodoComponent } from './todo/todo/todo.component';
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
 import { LoginComponent } from './auth/login/login.component';
-import { AddPersonneComponent } from './cv/add-personne/add-personne.component';
 import { HeaderComponent } from './header/header.component';
-import { DetailCvComponent } from './cv/detail-cv/detail-cv.component';
 import { FrontComponent } from './components/front/front.component';
 import { BackComponent } from './components/back/back.component';
 import { NF404Component } from './components/nf404/nf404.component';
@@ -45,7 +35,7 @@ import { TestObservableComponent } from './components/test-observable/test-obser
 import {HttpClientModule} from "@angular/common/http";
 import { TestHttpComponent } from './components/test-http/test-http.component';
 import {AuthentificationInterceptorProvider} from "./auth/auth.interceptor";
-
+import {CvModule} from "./cv/cv.module";
 
 @NgModule({
   declarations: [
@@ -58,24 +48,16 @@ import {AuthentificationInterceptorProvider} from "./auth/auth.interceptor";
     CardComponent,
     PereComponent,
     FilsComponent,
-    CvComponent,
-    ItemComponent,
-    ListComponent,
-    DetailComponent,
     NgstyleComponent,
     MiniWordComponent,
     AmpouleComponent,
     HighlightDirective,
     RainbowDirective,
     Btc2UsdPipe,
-    DefaultImagePipe,
     TodoComponent,
-    EmbaucheComponent,
     TestFormComponent,
     LoginComponent,
-    AddPersonneComponent,
     HeaderComponent,
-    DetailCvComponent,
     FrontComponent,
     BackComponent,
     NF404Component,
